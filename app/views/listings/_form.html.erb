@@ -1,4 +1,4 @@
-<%= simple_form_for(@listing) do |f| %>
+<%= simple_form_for(@listing, :html => { :multipart => true }) do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -19,18 +19,16 @@
   </div>
 
   <div class="form-group">
-    <%= f.input :price %>    
+    <%= f.input :price %>
+    <%# f.input :price, input_html:{style: "width:50%"} %>    
+  </div>
+
+  <div class="form-group">
+    <%# f.file_field :image %>    
+    <%= f.file_field :image, class: "btn btn-default", style: "width:100%"%>    
   </div>
   <div class="form-group">
     <%= f.submit "Sending", class: "btn btn-primary" %>
   </div>
-
-
-
-
-
-
-
-
 
 <% end %>
