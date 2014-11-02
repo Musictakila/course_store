@@ -15,4 +15,5 @@ gem 'spring',        group: :development
 gem 'sqlite3'
 gem 'bootstrap-sass'
 gem 'simple_form'
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
+gem 'compass-rails'

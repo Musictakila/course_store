@@ -1,6 +1,54 @@
-
 *
 	padding: 0
 	margin: 0
-
+//
 @import bootstrap
+//
+
+
+$text_basic_color: black
+$a_link: #245ec7
+
+// $nav_a_link:
+$nav_a_hover: #019285
+$nav_a_active: #ff7b7e
+
+body
+	background-color: #F5F5F1
+	// color: $text_basic_color
+	font-family: Avenir, Arial, Helvetica, sans-serif
+	a
+		&:link
+			// color: $text_basic_color
+			text-decoration: none
+		&:visited
+			// color: #13c2a1
+			text-decoration: none
+		&:hover
+			color: #13c2a1
+			text-decoration: none
+		&:active
+			// color: $nav_a_active
+			
+// navigation
+.navbar.navbar-default
+	background-color: #F5F5FA
+	border-radius: 0
+	li a
+		color: black
+		&:hover
+			color: $nav_a_hover
+	.navbar-brand
+		color: #d25b2a
+		font-weight: 420
+// container
+.col-md-3:nth-child(4n+1)
+	clear: left
+
+.col-md-6
+	h3
+		font-size: 45px
+		padding: 18px
+
+
+	
