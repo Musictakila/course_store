@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root 'listings#index'
   resources :listings
-
-
+  
+  root 'listings#index'
+  
   get 'welcomes/index'
   get 'pages/about'
   get 'pages/contact'

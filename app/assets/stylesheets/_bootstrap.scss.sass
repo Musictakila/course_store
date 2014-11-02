@@ -12,9 +12,10 @@ $a_link: #245ec7
 // $nav_a_link:
 $nav_a_hover: #019285
 $nav_a_active: #ff7b7e
+$nav_background_color: #F5F5F1
 
 body
-	background-color: #F5F5F1
+	background-color: $nav_background_color
 	// color: $text_basic_color
 	font-family: Avenir, Arial, Helvetica, sans-serif
 	a
@@ -41,8 +42,9 @@ body
 	.navbar-brand
 		color: #d25b2a
 		font-weight: 420
-span.top-right-email
-	color: #009f9c
+	
+	span.top-right-email
+		color: #009f9c
 
 // container
 .col-md-3:nth-child(4n+1)
@@ -52,6 +54,20 @@ span.top-right-email
 	h3
 		font-size: 45px
 		padding: 18px
+
+
+
+// footer
+footer
+	position: relative
+	border-top: 1px solid #bebeba
+	// margin-top: -150px // negative value of footer height
+	min-height: 250px
+	clear: both
+	padding-top: 20px
+	background-color: #e5e6e0
+
+
 
 
 	
