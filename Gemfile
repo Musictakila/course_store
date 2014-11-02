@@ -12,8 +12,19 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 #Add 
-gem 'sqlite3'
+
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'compass-rails'
+
+
+#Database
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
