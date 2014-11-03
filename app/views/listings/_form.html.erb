@@ -1,9 +1,10 @@
 <%= simple_form_for(@listing, :html => { :multipart => true }) do |f| %>
   <% if @listing.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+    <div id="error_explanation" class="alert alert-warning alert-dismissible" role="alert">
+       <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+      <h4><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h4>
 
-      <ul>
+      <ul style="padding-left:15px">
       <% @listing.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -11,6 +12,8 @@
     </div>
   <% end %>
 
+
+<!-- HTML Form -->
   <div class="form-group">
     <%= f.input :name, label: "Produce's Name", input_html:{ class: "form-control"} %>
   </div>
@@ -33,7 +36,8 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit "Sending", class: "btn btn-primary" %>
+    <%= f.submit "Sending", class: "btn btn-success" %>
+    <%= link_to "Canel", listings_path, class: "btn btn-default" %>
   </div>
 
 <% end %>
