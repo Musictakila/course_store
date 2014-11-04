@@ -10,10 +10,14 @@
 		<h3><%= @listing.name %></h3>
 		<p><%= number_to_currency(@listing.price) %></p>
 		<p><%= @listing.description %></p>
+		
 		<p class="pull-right">
-			<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-info" %>
+			<% if helper_check_user(current_user, @listing) %>
+				<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-info" %>
+			<% end %>
 			<%= link_to 'Back', listings_path, class: "btn btn-default" %>
 		</p>
+
 	</div> <!-- col-md-6 -->
 	</div> <!-- col-md-6 -->
 </div> <!-- row -->
