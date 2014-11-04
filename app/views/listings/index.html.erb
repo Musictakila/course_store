@@ -8,6 +8,7 @@
         <h4 class="listing_name"><%= link_to listing.name, listing_path(listing)%></h4>
         <!-- <p><%# listing.description.first( nb ) %>....</p> -->
         <p><%= number_to_currency(listing.price) %></p>
+        <p>Sold by <%= listing.user.name %></p>
         <p>
           <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
           <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>

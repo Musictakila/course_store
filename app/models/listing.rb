@@ -10,6 +10,7 @@ class Listing < ActiveRecord::Base
 	validates :price, numericality: { greater_than: 0 } #proce must > 0
 
 
-
+	#association
+	belongs_to :user
 
 end #Listing
