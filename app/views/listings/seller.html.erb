@@ -1,3 +1,5 @@
+<h3>This is seller page</h3>
+
 
 <div class="row">
   <% @listings.each do |listing| %>
@@ -8,8 +10,15 @@
         <h4 class="listing_name"><%= link_to listing.name, listing_path(listing)%></h4>
         <p><%= number_to_currency(listing.price) %></p>
         <p>Sold by <%= listing.user.name %></p>
-    
-      </div> <!-- caption -->
+        <!-- User's Actions -->
+        <%# if current_user && current_user == listing.user %>
+        <% if helper_check_user(current_user, listing) %>
+        <p>
+          <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %>
+          <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+        </p>  
+        <% end %>
+        </div>
     </div> <!-- thumbnail -->
     </div> <!-- col-md-3 -->
   <% end %>
